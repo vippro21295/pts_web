@@ -1,0 +1,183 @@
+<!-- <div class="header">
+   
+</div> -->
+<div class="search">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center align-items-center">
+            <span class="header__title">DANH SÁCH PHIẾU SỬA CHỮA</span>
+        </div>
+    </div>
+    <hr class="hr_title">
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-field">
+                <input type="text" class="form-input" placeholder="" [(ngModel)]="objSearch.search">
+                <label class="form-label">Từ khóa (Viết in hoa không dấu)</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-field">
+                <input type="text" class="form-input" appDatetimePicker [(ngModel)]="objSearch.startTime"
+                    [dateFormat]="'d/m/Y H:i'" [enableTime]="true" placeholder="" />
+                <label class="form-label">Từ ngày giờ xe vào</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-field">
+                <input type="text" class="form-input" appDatetimePicker [(ngModel)]="objSearch.endTime"
+                    [dateFormat]="'d/m/Y H:i'" [enableTime]="true" placeholder="">
+                <label class="form-label">Đến ngày giờ xe ra</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-field">
+                <input type="text" class="form-input" [(ngModel)]="objSearch.tuPhieu" placeholder="">
+                <label class="form-label">Từ số phiếu</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-field">
+                <input type="text" class="form-input" [(ngModel)]="objSearch.denPhieu" placeholder="">
+                <label class="form-label">Đến số phiếu</label>
+            </div>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="flex__search">
+                <div>
+                    <input type="radio" name="typesearch" id="hotenKH" value="TENKH" [(ngModel)]="objSearch.type">
+                    <label for="hotenKH">Họ tên KH</label>
+                </div>
+                <div>
+                    <input type="radio" name="typesearch" id="bienso" value="BIENSO" [(ngModel)]="objSearch.type">
+                    <label for="bienso">Biển số</label>
+                </div>
+                <div>
+                    <input type="radio" name="typesearch" id="sdt" value="DIENTHOAI" [(ngModel)]="objSearch.type">
+                    <label for="sdt">Số điện thoại</label>
+                </div>
+                <div>
+                    <input type="radio" name="typesearch" id="noidung" value="TENHANGMUC" [(ngModel)]="objSearch.type">
+                    <label for="noidung">Nội dung sửa chữa</label>
+                </div>
+                <div>
+                    <input type="radio" name="typesearch" id="hangmuc" value="MAHANGMUC" [(ngModel)]="objSearch.type">
+                    <label for="hangmuc">Mã hạng mục</label>
+                </div>
+                <div>
+                    <input type="radio" name="typesearch" id="maphutung" value="MAPHUTUNG" [(ngModel)]="objSearch.type">
+                    <label for="maphutung">Mã phụ tùng</label>
+                </div>
+                <div>
+                    <input type="radio" name="typesearch" id="tenphutung" value="TENPHUTUNG"
+                        [(ngModel)]="objSearch.type">
+                    <label for="tenphutung">Tên phụ tùng</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="flex__search">
+                <button class="btn btn-primary" (click)="search()">
+                    <i class="fa fa-search"></i>
+                    Tìm kiếm
+                </button>
+                <button class="btn btn-success" (click)="create()">
+                    <i class="fa fa-plus"></i>
+                    Tạo mới
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fa fa-trash"></i>
+                    Xóa
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fa fa-file-excel-o"></i>
+                    Xuất excel
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fa fa-search"></i>
+                    Tìm kiếm nâng cao
+                </button>
+                <button class="btn btn-primary">
+                    Kết ca
+                </button>
+                <button class="btn btn-primary">
+                    Báo tình trạng xe
+                </button>
+                <button class="btn btn-primary">
+                    Báo nhận xe
+                </button>
+                <button class="btn btn-primary">
+                    In hóa đơn
+                </button>
+                <!-- <button class="btn btn-primary">
+                    Từ chối CSI
+                </button> -->
+                <button class="btn btn-primary">
+                    Tạo công tác
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation" (click)="clickTab(1)">
+                    <button class="nav-link enableTab" id="tab1" type="button"><i class="fa fa-bar-chart"></i> Phiếu
+                        hoàn thành</button>
+                </li>
+                <li style="margin-left: 5px;" class="nav-item" role="presentation" (click)="clickTab(2)">
+                    <button class="nav-link disableTab" id="tab2" type="button"><i class="fa fa-commenting-o"></i> Phiếu
+                        tạm</button>
+                </li>
+                <li style="margin-left: 5px;" class="nav-item" role="presentation" (click)="clickTab(3)">
+                    <button class="nav-link disableTab" id="tab3">PTMV BO</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active " id="tabContent1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="body_table">
+                                <ag-grid-angular style="width: 100%; height: 400px; " class="ag-theme-balham "
+                                    [gridOptions]="gridOptionsFinish" [rowData]="rowDataFinish "
+                                    [rowSelection]="rowSelection " [rowHeight]="rowHeight" [enableRangeSelection]="true"
+                                    [enableCellTextSelection]="true" [ensureDomOrder]="true" [pagination]="true"
+                                    [paginationPageSize]="paginationPageSize"
+                                    [paginationPageSizeSelector]="paginationPageSizeSelector"
+                                    (cellDoubleClicked)="onCellDoubleClicked($event)">
+                                </ag-grid-angular>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabContent2">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="body_table">
+                                <ag-grid-angular style="width: 100%; height: 400px; " class="ag-theme-balham "
+                                    [gridOptions]="gridOptionsTemp" [rowData]="rowDataTemp"
+                                    [rowSelection]="rowSelection " [rowHeight]="rowHeight" [enableRangeSelection]="true"
+                                    [enableCellTextSelection]="true" [ensureDomOrder]="true" [pagination]="true"
+                                    [paginationPageSize]="paginationPageSize"
+                                    [paginationPageSizeSelector]="paginationPageSizeSelector"
+                                    (cellDoubleClicked)="onCellDoubleClicked($event)">
+                                </ag-grid-angular>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabContent3">3</div>
+            </div>
+        </div>
+    </div>
+</div>

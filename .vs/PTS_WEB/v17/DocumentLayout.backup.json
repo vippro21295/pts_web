@@ -1,0 +1,265 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\PTS_Web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3F74AD00-F4AF-4C29-BFD0-2DAC217C79AD}|ERP\\PTS_WEB.csproj|f:\\pts_web\\erp\\controllers\\servicebillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F74AD00-F4AF-4C29-BFD0-2DAC217C79AD}|ERP\\PTS_WEB.csproj|solutionrelative:erp\\controllers\\servicebillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\services\\servicebill\\servicebillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\services\\servicebill\\servicebillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\services\\servicebill\\iservicebillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\services\\servicebill\\iservicebillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\services\\users\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\services\\users\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F74AD00-F4AF-4C29-BFD0-2DAC217C79AD}|ERP\\PTS_WEB.csproj|f:\\pts_web\\erp\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3F74AD00-F4AF-4C29-BFD0-2DAC217C79AD}|ERP\\PTS_WEB.csproj|solutionrelative:erp\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F74AD00-F4AF-4C29-BFD0-2DAC217C79AD}|ERP\\PTS_WEB.csproj|f:\\pts_web\\erp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F74AD00-F4AF-4C29-BFD0-2DAC217C79AD}|ERP\\PTS_WEB.csproj|solutionrelative:erp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\services\\common\\commonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\services\\common\\commonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\services\\common\\icommonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\services\\common\\icommonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\models\\pt_servicebill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\models\\pt_servicebill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\models\\servicebillweb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\models\\servicebillweb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\models\\pt_checkforservicebill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\models\\pt_checkforservicebill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\models\\pt_servicebilldetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\models\\pt_servicebilldetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\models\\pt_specialtool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\models\\pt_specialtool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\services\\shiftend\\shiftendservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\services\\shiftend\\shiftendservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|F:\\PTS_Web\\erp_services\\models\\pt_servicelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DDFAD80-DD5C-4498-BAA8-32A52EC171B8}|ERP_Services\\PTS_Services.csproj|solutionrelative:erp_services\\models\\pt_servicelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsersService.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Services\\Users\\UsersService.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Services\\Users\\UsersService.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Services\\Users\\UsersService.cs",
+              "RelativeToolTip": "ERP_Services\\Services\\Users\\UsersService.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAgwCIAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T04:45:23.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ServiceBillService.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Services\\ServiceBill\\ServiceBillService.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Services\\ServiceBill\\ServiceBillService.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Services\\ServiceBill\\ServiceBillService.cs",
+              "RelativeToolTip": "ERP_Services\\Services\\ServiceBill\\ServiceBillService.cs",
+              "ViewState": "AgIAAGUCAAAAAAAAAAASwIICAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T12:20:45.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CommonService.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Services\\Common\\CommonService.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Services\\Common\\CommonService.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Services\\Common\\CommonService.cs",
+              "RelativeToolTip": "ERP_Services\\Services\\Common\\CommonService.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAqwIIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T12:20:45.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ServiceBillController.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP\\Controllers\\ServiceBillController.cs",
+              "RelativeDocumentMoniker": "ERP\\Controllers\\ServiceBillController.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP\\Controllers\\ServiceBillController.cs",
+              "RelativeToolTip": "ERP\\Controllers\\ServiceBillController.cs",
+              "ViewState": "AgIAADABAAAAAAAAAAAtwCYBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T12:20:46.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ServiceBillWeb.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Models\\ServiceBillWeb.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Models\\ServiceBillWeb.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Models\\ServiceBillWeb.cs",
+              "RelativeToolTip": "ERP_Services\\Models\\ServiceBillWeb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T07:54:02.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PT_ServiceBillDetail.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Models\\PT_ServiceBillDetail.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Models\\PT_ServiceBillDetail.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Models\\PT_ServiceBillDetail.cs",
+              "RelativeToolTip": "ERP_Services\\Models\\PT_ServiceBillDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T07:10:11.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "app.config",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP\\app.config",
+              "RelativeDocumentMoniker": "ERP\\app.config",
+              "ToolTip": "F:\\PTS_Web\\ERP\\app.config",
+              "RelativeToolTip": "ERP\\app.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-03-27T12:37:06.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PT_ServiceBill.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Models\\PT_ServiceBill.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Models\\PT_ServiceBill.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Models\\PT_ServiceBill.cs",
+              "RelativeToolTip": "ERP_Services\\Models\\PT_ServiceBill.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAvwC8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T12:20:45.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IServiceBillService.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Services\\ServiceBill\\IServiceBillService.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Services\\ServiceBill\\IServiceBillService.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Services\\ServiceBill\\IServiceBillService.cs",
+              "RelativeToolTip": "ERP_Services\\Services\\ServiceBill\\IServiceBillService.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAIA7wCgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T12:20:45.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PT_CheckForServiceBill.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Models\\PT_CheckForServiceBill.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Models\\PT_CheckForServiceBill.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Models\\PT_CheckForServiceBill.cs",
+              "RelativeToolTip": "ERP_Services\\Models\\PT_CheckForServiceBill.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T06:50:37.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ERP\\Controllers\\AuthController.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ERP\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAQwGkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T12:22:16.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ICommonService.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Services\\Common\\ICommonService.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Services\\Common\\ICommonService.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Services\\Common\\ICommonService.cs",
+              "RelativeToolTip": "ERP_Services\\Services\\Common\\ICommonService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T04:16:37.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PT_SpecialTool.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Models\\PT_SpecialTool.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Models\\PT_SpecialTool.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Models\\PT_SpecialTool.cs",
+              "RelativeToolTip": "ERP_Services\\Models\\PT_SpecialTool.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:59:19.312Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ShiftEndService.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Services\\ShiftEnd\\ShiftEndService.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Services\\ShiftEnd\\ShiftEndService.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Services\\ShiftEnd\\ShiftEndService.cs",
+              "RelativeToolTip": "ERP_Services\\Services\\ShiftEnd\\ShiftEndService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T02:00:31.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PT_ServiceList.cs",
+              "DocumentMoniker": "F:\\PTS_Web\\ERP_Services\\Models\\PT_ServiceList.cs",
+              "RelativeDocumentMoniker": "ERP_Services\\Models\\PT_ServiceList.cs",
+              "ToolTip": "F:\\PTS_Web\\ERP_Services\\Models\\PT_ServiceList.cs",
+              "RelativeToolTip": "ERP_Services\\Models\\PT_ServiceList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T07:10:59.593Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

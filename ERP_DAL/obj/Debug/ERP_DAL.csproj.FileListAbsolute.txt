@@ -1,0 +1,15 @@
+D:\PTS_Web\ERP_DAL\bin\Debug\SM_DAL.dll
+D:\PTS_Web\ERP_DAL\bin\Debug\SM_DAL.pdb
+D:\PTS_Web\ERP_DAL\bin\Debug\Dapper.dll
+D:\PTS_Web\ERP_DAL\bin\Debug\EntityFramework.dll
+D:\PTS_Web\ERP_DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\PTS_Web\ERP_DAL\bin\Debug\Newtonsoft.Json.dll
+D:\PTS_Web\ERP_DAL\bin\Debug\Dapper.xml
+D:\PTS_Web\ERP_DAL\bin\Debug\EntityFramework.xml
+D:\PTS_Web\ERP_DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\PTS_Web\ERP_DAL\bin\Debug\Newtonsoft.Json.xml
+D:\PTS_Web\ERP_DAL\obj\Debug\ERP_DAL.csproj.AssemblyReference.cache
+D:\PTS_Web\ERP_DAL\obj\Debug\ERP_DAL.csproj.CoreCompileInputs.cache
+D:\PTS_Web\ERP_DAL\obj\Debug\ERP_DAL.csproj.Up2Date
+D:\PTS_Web\ERP_DAL\obj\Debug\SM_DAL.dll
+D:\PTS_Web\ERP_DAL\obj\Debug\SM_DAL.pdb

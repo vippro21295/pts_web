@@ -1,0 +1,1220 @@
+<div class="bill">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-field">
+                <input type="text" class="form-input disabled_input" [(ngModel)]="objModel.Bill_NO" placeholder="">
+                <label class="form-label">Số phiếu</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-field">
+                <input type="text" class="form-input" placeholder="" [(ngModel)]="objModel.InputDateDate">
+                <label class="form-label">Ngày nhận</label>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="form-field">
+                <input type="text" class="form-input" placeholder="" [(ngModel)]="objModel.InputDateTime">
+                <label class="form-label">Giờ nhận</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="input-group">
+                <div class="form-field">
+                    <input type="text" class="form-input" [(ngModel)]="objModel.NumberPlate"
+                        (change)="changeNumberPlate()" placeholder=" ">
+                    <label class="form-label">Biển số</label>
+                </div>
+                <div class="input-group-append">
+                    <button class="btn btn-sm btn-success" (click)="searchNumberPlate()"><i
+                            class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" id="sbh" [(ngModel)]="objModel.SBH">
+                <label class="form-label">SBH</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" [(ngModel)]="objModel.CustName">
+                <label class="form-label">Tên khách hàng</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <div class="form-field">
+                    <input type="text" class="form-input" [(ngModel)]="objModel.Phone" placeholder=" " maxlength="11"
+                        (keypress)="allowOnlyNumbers($event)">
+                    <label class="form-label">Điện thoại</label>
+                </div>
+                <div class="input-group-append">
+                    <button class="btn btn-sm btn-success" (click)="searchPhone()"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" [(ngModel)]="objModel.AddressNumber">
+                <label class="form-label">Số nhà</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" [(ngModel)]="objModel.Address">
+                <label class="form-label">Đường</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" [(ngModel)]="objModel.Ward">
+                <label class="form-label">Phường</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-field">
+                <ng-select [clearable]="false" placeholder=" " [(ngModel)]="objModel.ProvinceCode"
+                    (change)="changeProvice($event)">
+                    <ng-option value="">Chọn tỉnh</ng-option>
+                    <ng-option *ngFor="let pro of lstProvince" value="{{pro.P_CODE}}">{{pro.P_TYPE}}
+                        {{pro.P_NAME}}</ng-option>
+                </ng-select>
+                <label class="form-label-select">Tỉnh</label>
+            </div>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-field">
+                <ng-select [clearable]="false" placeholder=" " [(ngModel)]="objModel.DistCode">
+                    <ng-option value="">Chọn quận/huyện</ng-option>
+                    <ng-option *ngFor="let dis of lstDistrictP" value="{{dis.D_CODE}}">{{dis.D_NAME}}</ng-option>
+                </ng-select>
+                <label class="form-label-select">Quận/huyện</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" [(ngModel)]="objModel.SK"
+                    (ngModelChange)="changeSK($event)">
+                <label class="form-label">SK</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" [(ngModel)]="objModel.SM">
+                <label class="form-label">SM</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-field">
+                <ng-select [clearable]="false" placeholder=" " [(ngModel)]="objModel.Model">
+                    <ng-option value="">Chọn loại xe</ng-option>
+                    <ng-option *ngFor="let honda of lstModelHonda"
+                        value="{{honda.ModelCode}}">{{honda.ModelCode}}</ng-option>
+                </ng-select>
+                <label class="form-label-select">Loại xe</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-field">
+                <ng-select [clearable]="false" placeholder=" " [(ngModel)]="objModel.ModelYear">
+                    <ng-option value="">Chọn đời xe</ng-option>
+                    <ng-option *ngFor="let honda of lstModelYear" value="{{honda.VinCode}}">{{honda.Year}}</ng-option>
+                </ng-select>
+                <label class="form-label-select">Đời xe</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" [(ngModel)]="objModel.TotalKms"
+                    (ngModelChange)="changeKM($event)" mask="separator.0" thousandSeparator=",">
+                <label class="form-label">Số KM</label>
+            </div>
+        </div>
+    </div>
+    <hr style="padding:0px">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="form-field">
+                        <input type="text" class="form-input" placeholder="" [(ngModel)]="objModel.ExpectedOutDateDate">
+                        <label class="form-label">Dự kiến trả xe</label>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-field">
+                        <input type="text" class="form-input" placeholder="" [(ngModel)]="objModel.ExpectedOutDateTime">
+                        <label class="form-label"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="simplify-box"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-field">
+                        <input type="text" class="form-input" placeholder="" [(ngModel)]="objModel.BuyDate">
+                        <label class="form-label">Ngày mua xe</label>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <textarea class="form-control" rows="4" (paste)="onPaste($event)" [(ngModel)]="objModel.CustomerRequest"
+                placeholder="Nhập tay..."></textarea>
+        </div>
+        <div class="col-md-2">
+            <textarea class="form-control" rows="4" [(ngModel)]="objModel.CustomerRequest_Copy"
+                style="font-style: italic;" placeholder="Nhập tay hoặc copy..."></textarea>
+        </div>
+        <div class="col-md-2">
+            <textarea class="form-control" rows="4" (paste)="onPaste($event)" [(ngModel)]="objModel.MotorStatus"
+                placeholder="Nhập tay..."></textarea>
+        </div>
+        <div class="col-md-2">
+            <textarea class="form-control" rows="4" [(ngModel)]="objModel.MotorStatus_Copy" style="font-style: italic;"
+                placeholder="Nhập tay hoặc copy..."></textarea>
+        </div>
+        <div class="col-md-2">
+            <textarea class="form-control" rows="4" [(ngModel)]="objModel.MotorStatusBefore" style="font-style: italic;"
+                placeholder="Nhập tay hoặc copy..."></textarea>
+        </div>
+    </div>
+    <div class="simplify-box"> </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-field">
+                <input type="number" min="0" max="100" step="1" class="form-input" [(ngModel)]="objModel.FuelLevel"
+                    placeholder="">
+                <label class="form-label">Mức nhiên liệu</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <app-progress-bar [progress]="objModel.FuelLevel"></app-progress-bar>
+        </div>
+        <div class="col-md-1">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" [(ngModel)]="objModel.SoThuTuCho">
+                <label class="form-label">Số thẻ</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-field">
+                <input type="text" class="form-input disabled_input" disabled placeholder=""
+                    [(ngModel)]="objModel.TotalPrevKm" mask="separator.0" thousandSeparator=",">
+                <label class="form-label">Số KM lần trước</label>
+            </div>
+        </div>
+        <div class="col-md-2" [hidden]="objModel.MaLyDoKhongCoSoKhung == ''">
+            <div class="form-field">
+                <select class="form-control" [(ngModel)]="objModel.MaLyDoKhongCoSoKhung">
+                    <option *ngFor="let reason of lstLyDoKCSK" [value]="reason.ItemCode">{{reason.ItemName}}</option>
+                </select>
+                <label class="form-label-select">Lý do không có SK</label>
+            </div>
+        </div>
+        <div class="col-md-2" [hidden]="objModel.MaLyDoKhongCoSoKhung != 'KHAC'">
+            <div class="form-field">
+                <input type="text" class="form-input" placeholder="" [(ngModel)]="objModel.TenLyDoKhongCoSoKhung">
+                <label class="form-label">Ghi chú lý do</label>
+            </div>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <fieldset class="scheduler-border" style="height: 84%;">
+                <legend class="scheduler-border">* CHỨC NĂNG</legend>
+                <div class="row" style="margin-top: -10px;">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">
+                        <div class="form-field" [hidden]="hiddenLyDoKM">
+                            <input type="text" class="form-input" [(ngModel)]="objModel.LyDoSaiSoKM" placeholder="">
+                            <label class="form-label">Lý do số KM &#60; Số KM lần trước</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="margin-top:5px">
+                        <input type="checkbox" checked id="printbill">
+                        <label for="printbill"> In phiếu </label>
+                    </div>
+                    <div class="col-md-5">
+                        <div style="float: right;">
+                            <button class="btn btn-sm btn-primary" (click)="save(false)" [hidden]="objModel.IsFinish">
+                                Lưu tạm
+                            </button>
+                            <button class="btn btn-sm btn-primary" (click)="save(true)" [hidden]="objModel.IsFinish">
+                                Hoàn thành
+                            </button>
+                            <button class="btn btn-sm btn-primary">
+                                In phiếu
+                            </button>
+                            <button class="btn btn-sm btn-primary">
+                                In hóa đơn
+                            </button>
+                            <button class="btn btn-sm btn-primary">
+                                In KTĐK
+                            </button>
+                            <button class="btn btn-sm btn-primary">
+                                QR Code
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <fieldset class="scheduler-border" style="height: 95%;">
+                <legend class="scheduler-border">* HẠNG MỤC SỬA CHỮA</legend>            
+                <hot-table [hotId]="hotIdWage" [settings]="hotSettingsWage"></hot-table>
+            </fieldset>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row" style="position: relative;">
+        <div class="col-md-6" style="padding-right: 18px !important;">
+            <fieldset class="scheduler-border" style="height: 97%;">
+                <legend class="scheduler-border">* PHỤ TÙNG THAY THẾ</legend>
+                <div class="row">
+                    <div class="col-md-11">
+                        <button class="btn btn-sm btn-primary" (click)="printPTTTPS('PTTT')">In PT thay thế</button>
+                        <button class="btn btn-sm btn-primary" (click)="removePTTT()">Xóa chọn</button>
+                        <input type="file" id="uploadFilePTTT" (change)="importExcelPT($event,'PTTT')" hidden>
+                        <label style="margin-bottom: 0px;" id="disbursementbtn" for="uploadFilePTTT"
+                            class="btn btn-sm btn-primary ">Nhập
+                            excel</label>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-sm btn-danger"> <i class="fa fa-download"></i> </button>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+                <hot-table [hotId]="hotIdPTTT" [settings]="hotSettingsPTTT"></hot-table>
+                <table style="width: 100%;" class="table__total">
+                    <tbody>
+                        <td style="padding-left:50px">Tổng cộng</td>
+                        <td>{{objTotalPTTT.totalQTY}}</td>
+                        <td>{{objTotalPTTT.totalAmount | number:'1.0-0'}} đ</td>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+        <div class="btn__phutungchange">
+            <button class="btn btn-sm btn-success" (click)="sendPTPS()"><i class="fa fa-arrow-right"
+                    aria-hidden="true"></i></button>
+            <br>
+            <button class="btn btn-sm btn-success" (click)="sendPTTT()" style="margin-top:15px"><i
+                    class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="col-md-6" style="padding-left: 18px !important;">
+            <fieldset class="scheduler-border" style="height: 97%;">
+                <legend class="scheduler-border">* PHỤ TÙNG PHÁT SINH</legend>
+                <div class="row">
+                    <div class="col-md-11">
+                        <button class="btn btn-sm btn-primary" (click)="printPTTTPS('PTPS')">In PT phát sinh</button>
+                        <button class="btn btn-sm btn-primary" (click)="removePTPS()">Xóa chọn</button>
+                        <input type="file" id="uploadFilePTPS" (change)="importExcelPT($event,'PTPS')" hidden>
+                        <label style="margin-bottom: 0px;" id="disbursementbtn" for="uploadFilePTPS"
+                            class="btn btn-sm btn-primary ">Nhập
+                            excel</label>
+
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-sm btn-danger" (click)="downloadPT()"> <i class="fa fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+                <hot-table [hotId]="hotIdPTPS" [settings]="hotSettingsPTPS"></hot-table>
+                <table style="width: 100%;" class="table__total">
+                    <tbody>
+                        <td style="padding-left:50px">Tổng cộng</td>
+                        <td>{{objTotalPTPS.totalQTY}}</td>
+                        <td>{{objTotalPTPS.totalAmount | number:'1.0-0'}} đ</td>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-6 offset-md-6">
+            <div style="float: right; font-weight: bold; font-style: italic; color:blue">
+                <span>* TỔNG TIỀN PHỤ TÙNG: <span style="color:red">{{totalPhuTung | number:'1.0-0'}} đ</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row" style="position: relative;">
+        <div class="col-md-12">
+            <div class="load_dms">
+                <span style="color:blue; font-style: italic;">(Click vào để load phụ tùng từ DMS)</span> &nbsp;
+                <button class="btn btn-sm btn-success" style="padding:2px 6px; margin-top:-2px"
+                    (click)="loadPhuTungDMS()"><i class="fa fa-refresh"></i></button>
+            </div>
+            <fieldset class="scheduler-border" style="height: 97%;">
+                <legend class="scheduler-border">* NHỚT + PHỤ TÙNG TRONG + PHỤ TÙNG NGOÀI</legend>
+                <div class="ag-container">
+                    <div class="ag-table-wrapper">
+                        <table class="ag-table ">
+                            <thead>
+                                <tr>
+                                    <th>TÊN PHỤ TÙNG</th>
+                                    <th>MÃ PHỤ TÙNG</th>
+                                    <th>GIÁ BÁN</th>
+                                    <th>GIẢM GIÁ</th>
+                                    <th>LÝ DO GIẢM GIÁ</th>
+                                    <th>SỐ LƯỢNG</th>
+                                    <th>THÀNH TIỀN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of lstPTTool; index as i" class="table__nhotPTTPTN"
+                                    [ngStyle]="{'background-color': item.Color ? '#f8d1d1' : null }">
+
+                                    <td>{{item.ToolName}}</td>
+                                    <td>{{item.Part_No}}</td>
+                                    <td>{{item.OriginalPrice | number:'1.0-0'}} đ</td>
+                                    <td>{{item.DiscountPrice | number:'1.0-0'}} đ</td>
+                                    <td>{{item.DiscountReason}}</td>
+                                    <td>{{item.QTY}}</td>
+                                    <td>{{item.Amount | number:'1.0-0'}} đ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <fieldset class="scheduler-border" style="height: 95%;">
+                <legend class="scheduler-border">* PHỤ TÙNG TỰ MUA</legend>
+                <div class="ag-container">
+                    <div class="ag-table-wrapper">
+                        <table class="ag-table ">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>TÊN PHỤ TÙNG</th>
+                                    <th>MÃ PHỤ TÙNG</th>
+                                    <th>SỐ LƯỢNG</th>
+                                    <th>GIÁ BÁN</th>
+                                    <th>GIÁ VỐN</th>
+                                    <th>LÃI</th>
+                                    <th>THÀNH TIỀN LÃI</th>
+                                    <th>THÀNH TIỀN</th>
+                                    <th style="text-align: center;"><button class="btn btn-sm btn-success"
+                                            (click)="addPTTM()" style="padding: 0.01em 0.4em !important"><i
+                                                class="fa fa-plus"></i></button></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of lstPTTM; index as i" class="table__nhotPTTPTN">
+                                    <td style="text-align: center;">{{i + 1}}</td>
+                                    <td (click)="openToolBuy(item, i)">{{item.Part_Name}}</td>
+                                    <td>{{item.Part_No}}</td>
+                                    <td>{{item.QTY}}</td>
+                                    <td>{{item.Price_After_Discount| number:'1.0-0'}} đ</td>
+                                    <td>{{item.OriginalPrice| number:'1.0-0'}} đ</td>
+                                    <td>{{item.interest | number:'1.0-0'}} đ</td>
+                                    <td>{{item.interestAmount| number:'1.0-0'}} đ</td>
+                                    <td>{{item.Amount | number:'1.0-0'}} đ</td>
+                                    <td style="text-align: center;"><button class="btn btn-sm btn-danger btn__trash"
+                                            (click)="removePTTM(i)"><i class="fa fa-trash"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <hr>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-field">
+                <ng-select [clearable]="false" placeholder=" " [(ngModel)]="objModel.ReceivedBy">
+                    <ng-option value="0">Chọn NV tiếp nhận</ng-option>
+                    <ng-option *ngFor="let acc of lstAccount" value="{{acc.UserID}}">{{acc.UserName}}</ng-option>
+                </ng-select>
+                <label class="form-label-select">NV tiếp nhận</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-field">
+                <input type="text" class="form-input disabled_input" placeholder="" [(ngModel)]="objModel.TongTienDV"
+                    mask="separator.0" thousandSeparator=",">
+                <label class="form-label">Tiền dịch vụ</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-field">
+                <input type="text" class="form-input disabled_input" placeholder="" [(ngModel)]="objModel.TongTienPT"
+                    mask="separator.0" thousandSeparator=",">
+                <label class="form-label">Tiền phụ tùng</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-field">
+                <input type="text" class="form-input disabled_input" placeholder="" [(ngModel)]="objModel.TongTienGG"
+                    mask="separator.0" thousandSeparator=",">
+                <label class="form-label">Giảm giá</label>
+            </div>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+            <div class="form-field">
+                <input type="text" class="form-input disabled_input" placeholder="" [(ngModel)]="objModel.TotalMoney"
+                    mask="separator.0" thousandSeparator=",">
+                <label class="form-label">Thành tiền</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-field">
+                <input type="text" class="form-input disabled_input" placeholder=""
+                    [(ngModel)]="objModel.DocTienThanhChu">
+                <label class="form-label">Bằng chữ</label>
+            </div>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" appDatetimePicker [dateFormat]="'d/m/Y H:i'"
+                    [enableTime]="true" [(ngModel)]="objModel.RepairDate">
+                <label class="form-label">Bắt đầu sửa</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" appDatetimePicker [dateFormat]="'d/m/Y H:i'"
+                    [enableTime]="true" [(ngModel)]="objModel.FinishDate">
+                <label class="form-label">Kết thúc sửa</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-field">
+                <input type="text" class="form-input " placeholder="" appDatetimePicker [dateFormat]="'d/m/Y H:i'"
+                    [enableTime]="true" [(ngModel)]="objModel.OutputDate">
+                <label class="form-label">Ngày giờ giao</label>
+            </div>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-field">
+                <ng-select [clearable]="false" placeholder=" " [(ngModel)]="objModel.RepairedBy">
+                    <ng-option value="0">Chọn KTV sửa chữa</ng-option>
+                    <ng-option *ngFor="let acc of lstAccount" value="{{acc.UserID}}">{{acc.UserName}}</ng-option>
+                </ng-select>
+                <label class="form-label-select">KTV sửa chữa</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-field">
+                <ng-select [clearable]="false" placeholder=" " [(ngModel)]="objModel.CheckBy">
+                    <ng-option value="0">Chọn NVKT xe ra</ng-option>
+                    <ng-option *ngFor="let acc of lstAccount" value="{{acc.UserID}}">{{acc.UserName}}</ng-option>
+                </ng-select>
+                <label class="form-label-select">NVKT xe ra</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-field">
+                <ng-select [clearable]="false" placeholder=" " [(ngModel)]="objModel.Cashier">
+                    <ng-option value="0">Chọn NV thu ngân</ng-option>
+                    <ng-option *ngFor="let acc of lstAccount" value="{{acc.UserID}}">{{acc.UserName}}</ng-option>
+                </ng-select>
+                <label class="form-label-select">NV thu ngân</label>
+            </div>
+        </div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-field">
+                <ng-select [clearable]="false" placeholder=" " [(ngModel)]="objModel.RepairedBy2">
+                    <ng-option value="0">Chọn KTV cùng sửa</ng-option>
+                    <ng-option *ngFor="let acc of lstAccount" value="{{acc.UserID}}">{{acc.UserName}}</ng-option>
+                </ng-select>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="form-field">
+                <select class="form-control" [(ngModel)]="objModel.LoaiKiemTraCuoi">
+                    <option *ngFor="let item of lstLoaiKTC" [value]="item.ItemCode">{{item.ItemName}}</option>
+                </select>
+                <label class="form-label-select">Loại kiểm tra</label>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="simplify-box"></div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="body-table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="24">Kiểm tra/tư vấn các phụ tùng hao mòn Ký hiệu: O: OK - D: Điều chỉnh - T:
+                                Thay thế - V: Vệ sinh - B: Bôi trơn</th>
+                        </tr>
+                        <tr>
+                            <th colspan="12">
+                                Kiểm tra phụ tùng tại quầy tiếp tân
+                            </th>
+                            <th colspan="12">
+                                Kiểm tra phụ tùng tại xưởng dịch vụ
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Phụ tùng</th>
+                            <th>O</th>
+                            <th>D</th>
+                            <th>T</th>
+                            <th>V</th>
+                            <th>B</th>
+
+                            <th>Phụ tùng</th>
+                            <th>O</th>
+                            <th>D</th>
+                            <th>T</th>
+                            <th>V</th>
+                            <th>B</th>
+
+                            <th>Phụ tùng</th>
+                            <th>O</th>
+                            <th>D</th>
+                            <th>T</th>
+                            <th>V</th>
+                            <th>B</th>
+
+                            <th>Phụ tùng</th>
+                            <th>O</th>
+                            <th>D</th>
+                            <th>T</th>
+                            <th>V</th>
+                            <th>B</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of items">
+                            <ng-container *ngFor="let item of row">
+                                <td>{{ item }}</td>
+                                <td *ngFor="let state of states">
+                                    <input type="checkbox" [id]="'chk_' + normalizeItem(item) + '_' + state"
+                                        [(ngModel)]="checkboxValues[item][state]" />
+                                </td>
+                            </ng-container>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <textarea rows="3" placeholder="Ghi chú" class="form-control" [(ngModel)]="objModel.Description"></textarea>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <fieldset class="scheduler-border" style="height: 95%;">
+                        <legend class="scheduler-border">PHỤ TÙNG</legend>
+                        <input type="radio" value="Y" name="laylaipt" id="id_laylaipt"
+                            [(ngModel)]="objModel.LayLaiPhuTungCu">
+                        <label for="id_laylaipt">Lấy lại PT cũ</label>
+                        <br>
+                        <input type="radio" value="N" name="laylaipt" id="id_klaylaipt"
+                            [(ngModel)]="objModel.LayLaiPhuTungCu">
+                        <label for="id_klaylaipt">Không lấy PT cũ</label>
+                        <br>
+                        <select class="form-control" [(ngModel)]="objModel.XacNhanSuaChua">
+                            <option *ngFor="let scn of lstSuaChuaNang" [value]="scn.id">{{scn.name}}</option>
+                        </select>
+                    </fieldset>
+                </div>
+                <div class="col-md-6">
+                    <fieldset class="scheduler-border" style="height: 95%;">
+                        <legend class="scheduler-border">RỬA XE</legend>
+                        <input type="radio" value="T" name="ruaxe" id="id_truockhisua" [(ngModel)]="objModel.RuaXe">
+                        <label for="id_truockhisua">Trước khi sửa chữa</label>
+                        <br>
+                        <input type="radio" value="S" name="ruaxe" id="id_saukhisua" [(ngModel)]="objModel.RuaXe">
+                        <label for="id_saukhisua">Sau khi sửa chữa</label>
+                        <br>
+                        <input type="radio" value="K" name="ruaxe" id="id_khongcansua" [(ngModel)]="objModel.RuaXe">
+                        <label for="id_khongcansua">Không cần rửa xe</label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="body-table">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th colspan="4">Thời gian kiểm tra xe lần tới (dự kiến)</th>
+                                </tr>
+                                <tr>
+                                    <th style="width: 30%;">Hạng mục</th>
+                                    <th style="width: 30%;">Thời gian</th>
+                                    <th style="width: 20%;">KM</th>
+                                    <th style="width: 20%;">Cấp độ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <select class="select__input_table" [(ngModel)]="objPTHM.hangMucLanToi">
+                                            <option *ngFor="let tool of lstNextTool" value="{{tool.ItemName}}">
+                                                {{tool.ItemName}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="select__input_table" placeholder="" appDatetimePicker
+                                            [dateFormat]="'d/m/Y'" [(ngModel)]="objPTHM.thoiGianLanToi">
+                                    </td>
+                                    <td>
+                                        <input class="select__input_table" type="text" [(ngModel)]="objPTHM.kmLanToi">
+                                    </td>
+                                    <td>
+                                        <select class="select__input_table" [(ngModel)]="objPTHM.capDoLanToi">
+                                            <option *ngFor="let index of lstCapDo" [value]="index.id">{{index.name}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select class="select__input_table" [(ngModel)]="objPTHM.hangMucLanToi2">
+                                            <option *ngFor="let tool of lstNextTool" value="{{tool.ItemName}}">
+                                                {{tool.ItemName}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="select__input_table" placeholder="" appDatetimePicker
+                                            [dateFormat]="'d/m/Y'" [(ngModel)]="objPTHM.thoiGianLanToi2">
+                                    </td>
+                                    <td>
+                                        <input class="select__input_table" type="text" [(ngModel)]="objPTHM.kmLanToi2">
+                                    </td>
+                                    <td>
+                                        <select class="select__input_table" [(ngModel)]="objPTHM.capDoLanToi2">
+                                            <option *ngFor="let index of lstCapDo" [value]="index.id">{{index.name}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select class="select__input_table" [(ngModel)]="objPTHM.hangMucLanToi3">
+                                            <option *ngFor="let tool of lstNextTool" value="{{tool.ItemName}}">
+                                                {{tool.ItemName}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="select__input_table" placeholder="" appDatetimePicker
+                                            [dateFormat]="'d/m/Y'" [(ngModel)]="objPTHM.thoiGianLanToi3">
+                                    </td>
+                                    <td>
+                                        <input class="select__input_table" type="text" [(ngModel)]="objPTHM.kmLanToi3">
+                                    </td>
+                                    <td>
+                                        <select class="select__input_table" [(ngModel)]="objPTHM.capDoLanToi3">
+                                            <option *ngFor="let index of lstCapDo" [value]="index.id">{{index.name}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select class="select__input_table" [(ngModel)]="objPTHM.hangMucLanToi4">
+                                            <option *ngFor="let tool of lstNextTool" value="{{tool.ItemName}}">
+                                                {{tool.ItemName}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="select__input_table" placeholder="" appDatetimePicker
+                                            [dateFormat]="'d/m/Y'" [(ngModel)]="objPTHM.thoiGianLanToi4">
+                                    </td>
+                                    <td>
+                                        <input class="select__input_table" type="text" [(ngModel)]="objPTHM.kmLanToi4">
+                                    </td>
+                                    <td>
+                                        <select class="select__input_table" [(ngModel)]="objPTHM.capDoLanToi4">
+                                            <option *ngFor="let index of lstCapDo" [value]="index.id">{{index.name}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select class="select__input_table" [(ngModel)]="objPTHM.hangMucLanToi5">
+                                            <option *ngFor="let tool of lstNextTool" value="{{tool.ItemName}}">
+                                                {{tool.ItemName}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="select__input_table" placeholder="" appDatetimePicker
+                                            [dateFormat]="'d/m/Y'" [(ngModel)]="objPTHM.thoiGianLanToi5">
+                                    </td>
+                                    <td>
+                                        <input class="select__input_table" type="text" [(ngModel)]="objPTHM.kmLanToi5">
+                                    </td>
+                                    <td>
+                                        <select class="select__input_table" [(ngModel)]="objPTHM.capDoLanToi5">
+                                            <option *ngFor="let index of lstCapDo" [value]="index.id">{{index.name}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="popupServiceCode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="popup_title">HẠNG MỤC SỬA CHỮA</h5>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-field">
+                            <ng-select [clearable]="false" [searchable]="true" [(ngModel)]="objServiceCode.ServiceCode"
+                                (ngModelChange)="changeServiceCode(indexServiceCode, $event)">
+                                <ng-option *ngFor="let service of lstServiceList"
+                                    [value]="service.ServiceCode">{{service.ServiceName}}</ng-option>
+                            </ng-select>
+                            <label class="form-label-select">Hạng mục</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder="" style="text-transform: uppercase;"
+                                [(ngModel)]="objServiceCode.Comment" [disabled]="!objServiceCode.IsEditComment">
+                            <label class="form-label">Nội dung sửa chữa</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder="" [(ngModel)]="objServiceCode.Price"
+                                (ngModelChange)="changePrice(indexServiceCode,$event)"
+                                [disabled]="!objServiceCode.IsEditPrice" mask="separator.0" thousandSeparator=",">
+                            <label class="form-label">Đơn giá</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-field">
+                            <ng-select [clearable]="false" [searchable]="false"
+                                [(ngModel)]="objServiceCode.SaleOffReason"
+                                (ngModelChange)="changeSaleOffReason(indexServiceCode,$event)">
+                                <ng-option *ngFor="let reason of lstSaleOffRs" [value]="reason.value">
+                                    {{reason.text}}</ng-option>
+
+                            </ng-select>
+                            <label class="form-label-select">Lý do giảm giá</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder="" [(ngModel)]="objServiceCode.SaleOff"
+                                (ngModelChange)="changeSaleOff(indexServiceCode,$event)"
+                                [disabled]="!objServiceCode.IsEditSafeOff" mask="separator.0" thousandSeparator=",">
+                            <label class="form-label">Số tiền giảm giá</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-field">
+                            <input type="text" class="form-input disabled_input" placeholder=""
+                                [(ngModel)]="objServiceCode.Amount" mask="separator.0" thousandSeparator=",">
+                            <label class="form-label">THÀNH TIỀN</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder="" [(ngModel)]="objServiceCode.OutPaid"
+                                (ngModelChange)="changeOutPaid(indexServiceCode,$event)"
+                                [disabled]="!objServiceCode.IsEditOutPaid" mask="separator.0" thousandSeparator=",">
+                            <label class="form-label">Chi GCN</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-field">
+                            <ng-select [clearable]="false" [searchable]="true" appendTo="body"
+                                [(ngModel)]="objServiceCode.SaleBy">
+                                <ng-option *ngFor="let account of lstAccount" [value]="account.UserID">
+                                    {{account.UserName}}</ng-option>
+                            </ng-select>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="popupToolPTTT" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="popup_title">PHỤ TÙNG THAY THẾ</h5>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder="" [(ngModel)]="objSpecialTool.Part_Name"
+                                (ngModelChange)="changePartName($event)">
+                            <label class="form-label">Tên phụ tùng</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-field">
+                            <input type="number" class="form-input" placeholder="" [(ngModel)]="objSpecialTool.QTY"
+                                (ngModelChange)="changeQTYPTTT(indexSpecialTool,$event)" min="1" max="1000" step="1">
+                            <label class="form-label">SL</label>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder=""
+                                [(ngModel)]="objSpecialTool.Price_After_Discount"
+                                (ngModelChange)="changePricePTTT(indexSpecialTool,$event)" mask="separator.0"
+                                thousandSeparator=",">
+                            <label class="form-label-select">Đơn giá</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder="" [(ngModel)]="objSpecialTool.Amount"
+                                mask="separator.0" thousandSeparator=",">
+                            <label class="form-label">THÀNH TIỀN</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-field">
+                            <ng-select [clearable]="false" [searchable]="true" appendTo="body"
+                                [(ngModel)]="objSpecialTool.SaleBy">
+                                <ng-option *ngFor="let account of lstAccount" [value]="account.UserID">
+                                    {{account.UserName}}</ng-option>
+                            </ng-select>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="popupToolPTPS" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="popup_title">PHỤ TÙNG PHÁT SINH</h5>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder="" style="text-transform: uppercase;"
+                                [(ngModel)]="objSpecialTool.Part_Name">
+                            <label class="form-label">Tên phụ tùng</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-field">
+                            <input type="number" class="form-input" placeholder="" [(ngModel)]="objSpecialTool.QTY"
+                                (ngModelChange)="changeQTYPTPS(indexSpecialTool,$event)" min="1" max="1000" step="1">
+                            <label class="form-label">SL</label>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder=""
+                                [(ngModel)]="objSpecialTool.Price_After_Discount"
+                                (ngModelChange)="changePricePTPS(indexSpecialTool,$event)" mask="separator.0"
+                                thousandSeparator=",">
+                            <label class="form-label-select">Đơn giá</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder="" [(ngModel)]="objSpecialTool.Amount"
+                                mask="separator.0" thousandSeparator=",">
+                            <label class="form-label">THÀNH TIỀN</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-field">
+                            <ng-select [clearable]="false" [searchable]="true" appendTo="body"
+                                [(ngModel)]="objSpecialTool.SaleBy">
+                                <ng-option *ngFor="let account of lstAccount" [value]="account.UserID">
+                                    {{account.UserName}}</ng-option>
+                            </ng-select>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="popupToolInBillBuy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="popup_title">PHỤ TÙNG TỰ MUA</h5>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder="" style="text-transform: uppercase;"
+                                [(ngModel)]="objToolBuy.Part_Name">
+                            <label class="form-label">Tên phụ tùng</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder="" style="text-transform: uppercase;"
+                                [(ngModel)]="objToolBuy.Part_No">
+                            <label class="form-label">Mã phụ tùng</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-field">
+                            <input type="number" class="form-input" placeholder="" [(ngModel)]="objToolBuy.QTY"
+                                (ngModelChange)="changeQTYPTTM(indexToolBuy, $event)" min="1" max="1000" step="1">
+                            <label class="form-label">SL</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder=""
+                                [(ngModel)]="objToolBuy.Price_After_Discount" mask="separator.0"
+                                (ngModelChange)="changePriceAfterDiscount(indexToolBuy, $event)" thousandSeparator=",">
+                            <label class="form-label">Giá bán</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-field">
+                            <input type="text" class="form-input" placeholder="" [(ngModel)]="objToolBuy.OriginalPrice"
+                                (ngModelChange)="changeOriginalPrice(indexToolBuy, $event)" mask="separator.0"
+                                thousandSeparator=",">
+                            <label class="form-label">Giá vốn</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-field">
+                            <input type="text" class="form-input disabled_input" placeholder=""
+                                [(ngModel)]="objToolBuy.interest" mask="separator.0" thousandSeparator=",">
+                            <label class="form-label">LÃI</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-field">
+                            <input type="text" class="form-input disabled_input" placeholder=""
+                                [(ngModel)]="objToolBuy.interestAmount" mask="separator.0" thousandSeparator=",">
+                            <label class="form-label">THÀNH TIỀN LÃI</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box-x2 "></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-field">
+                            <input type="text" class="form-input disabled_input" placeholder=""
+                                [(ngModel)]="objToolBuy.Amount" mask="separator.0" thousandSeparator=",">
+                            <label class="form-label">THÀNH TIỀN</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="popupHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="popup_title">TRA CỨU LỊCH SỬ SỬA CHỮA</h5>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-field">
+                            <input type="text" class="form-input disabled_input" [(ngModel)]="objModel.NumberPlate"
+                                placeholder="">
+                            <label class="form-label">Biển số xe</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-field">
+                            <input type="text" class="form-input disabled_input" [(ngModel)]="objModel.Phone"
+                                placeholder="">
+                            <label class="form-label">Số điện thoại</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-field">
+                            <input type="text" class="form-input disabled_input" [(ngModel)]="objModel.SK"
+                                placeholder="">
+                            <label class="form-label">Số khung</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-sm btn-primary" style="padding:6px 12px"><i class="fa fa-search"></i>
+                            Tìm</button>
+                    </div>
+                </div>
+                <div class="simplify-box"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ag-container">
+                            <div class="ag-table-wrapper" #tablePTTT>
+                                <table class="ag-table">
+                                    <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>HEAD</th>
+                                            <th>NGÀY THỰC HIỆN</th>
+                                            <th>SỐ PHIẾU</th>
+                                            <th>BIỂN SỐ</th>
+                                            <th>SỐ KM</th>
+                                            <th>SỐ ĐIỆN THOẠI</th>
+                                            <th>KHÁCH HÀNG</th>
+                                            <th>HÀNH ĐỘNG</th>
+                                            <th>NỘI DUNG</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of lstHistory; index as i" style="height: 26px;">
+                                            <td>{{i+1}}</td>
+                                            <td>{{item.HEAD}}</td>
+                                            <td>{{item.Ngay | date:'dd/MM/yyyy'}}</td>
+                                            <td>{{item.Bill_No}}</td>
+                                            <td>{{item.NumberPlate}}</td>
+                                            <td>{{item.TotalKms}}</td>
+                                            <td>{{item.Phone}}</td>
+                                            <td>{{item.CustName}}</td>
+                                            <td>{{item.Action}}</td>
+                                            <td>{{item.note}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div hidden>
+    <app-print-tool #child></app-print-tool>
+</div>

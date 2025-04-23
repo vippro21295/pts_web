@@ -1,0 +1,146 @@
+<div id="print-section" #htmlprint style="font-family:Times New Roman;margin:0 auto;width:745px;position:relative">
+    <div style="font-weight:bold;font-size:17px;position:absolute;right:0px;width:95px;text-align:center">
+        {{obj.InputDate | date:'dd/MM/yyyy'}}</div>
+    <div
+        style="font-weight:bold;font-size:15px;position:absolute;right:0px;top:30px;width:95px;text-transform:uppercase">
+        {{obj.KetCa}}</div>
+    <div style="font-weight:bold;font-size:12px;position:absolute;right:0px;top:58px;width:95px;text-align:center">In
+        lần {{obj.InLan}}</div>
+    <div style="font-weight:bold;font-size:12px;position:absolute;right:0px;top:73px;width:130px;text-align:center">
+        ({{obj.NgayIn}})</div>
+    <table style="width:100%" cellpadding="0px" cellspacing="0px">
+        <tr>
+            <td style="color:red;font-size:18px;text-align:center;font-weight:bold">Cửa Hàng Bán Xe Và Dịch Vụ Do Honda
+                Ủy Nhiệm</td>
+        </tr>
+        <tr>
+            <td style="color:black;text-align:center;text-transform:uppercase">{{obj.Head}}</td>
+        </tr>
+        <tr>
+            <td style="color:black;font-size:20px;text-align:center;text-transform:uppercase;font-weight:bold">PHIẾU
+                XUẤT KHO ({{obj.LoaiPhieu}}) </td>
+        </tr>
+        <tr>
+            <td style="color:black;text-align:center">{{obj.HeadAddress}}</td>
+        </tr>
+        <tr>
+            <td style="color:Black;text-align:center">Ngày <span style="font-size:16px">{{obj.InputDate |
+                    date:'dd'}}</span> tháng <span style="font-size:16px">{{obj.InputDate | date:'MM'}}</span> năm <span
+                    style="font-size:16px">{{obj.InputDate | date:'yyyy'}}</span></td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width:100%">
+                    <tr>
+                        <td style="width:5%"></td>
+                        <td style="width:40%">Loại xe: <b>{{obj.Model}}</b></td>
+                        <td style="width:5%"></td>
+                        <td style="width:55%">Số phiếu DV: <b>{{obj.Bill_NO}} </b></td>
+                    </tr>
+                    <tr style="height: 15px;"></tr>
+                    <tr>
+                        <td></td>
+                        <td>Biển số: <b>{{obj.NumberPlate}}</b></td>
+                        <td></td>
+                        <td style="position: relative;">Mã phiếu:
+                            <span style="position: absolute;top:-13px">
+                                <ngx-barcode6 [bc-value]="obj.Bill_NO" [bc-format]="'CODE39'" [bc-width]="1"
+                                    [bc-height]="30" [bc-display-value]="false">
+                                </ngx-barcode6>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr style="height: 15px;"></tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="color:Black;text-align:center;padding:0">
+                <table cellpadding="2px" cellspacing="0px" style="width:100%;border:1px solid black">
+                    <tr>
+                        <td style="border-right:1px solid black;width:3%"><b>STT</b></td>
+                        <td style="border-right:1px solid black;width:50%"><b>TÊN PHỤ TÙNG</b></td>
+                        <td style="border-right:1px solid black;width:5%"><b>SỐ LƯỢNG</b></td>
+                        <td style="border-right:1px solid black;width:15%"><b>ĐƠN GIÁ</b></td>
+                        <td style="width:20%"><b>THÀNH TIỀN</b></td>
+                    </tr>
+                    <tr *ngFor="let item of data; index as i">
+                        <td style="border:1px solid black;text-align:center;">{{i + 1}}</td>
+                        <td style="border:1px solid black;text-align:left;">{{item.Part_Name}}</td>
+                        <td style="border:1px solid black;text-align:right;">{{item.QTY}}</td>
+                        <td style="border:1px solid black;text-align:right;">{{item.Price_After_Discount|
+                            number:'1.0-0'}}</td>
+                        <td style="border:1px solid black;text-align:right;">{{item.Amount| number:'1.0-0'}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="color:Black;border-top:1px solid black;border-right:1px solid black">
+                            <b>Tổng cộng</b>
+                        </td>
+                        <td
+                            style="color:Black;border-top:1px solid black;border-right:1px solid black;text-align:right;font-weight:bold">
+                            {{totalQTY| number:'1.0-0'}}</td>
+                        <td
+                            style="color:Black;border-top:1px solid black;border-right:1px solid black;text-align:right;font-weight:bold">
+                        </td>
+                        <td style="color:Black;border-top:1px solid black;text-align:right;font-weight:bold">
+                            {{totalAmount| number:'1.0-0'}}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table style="width:100%;float:left" cellpadding="0px" cellspacing="0px">
+        <tr>
+            <td style="width: 20%;text-align: center">
+                &nbsp;
+            </td>
+            <td style="width: 20%;text-align: center">
+            </td>
+            <td style="width: 20%;text-align: center">
+            </td>
+        </tr>
+        <tr>
+            <td style="width:20%;text-align:center">
+                <b>Người lập phiếu</b>
+            </td>
+            <td style="width:20%;text-align:center">
+                <b>Người xuất</b>
+            </td>
+            <td style="width:20%;text-align:center">
+                <b>Người nhận</b>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%;text-align: center">
+                &nbsp;
+            </td>
+            <td style="width: 20%;text-align: center">
+            </td>
+            <td style="width: 20%;text-align: center">
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; text-align: center">
+                &nbsp;
+            </td>
+            <td style="width: 20%; text-align: center">
+            </td>
+            <td style="width: 20%; text-align: center">
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; text-align: center">
+                {{obj.NguoiLapPhieu}}
+            </td>
+            <td style="width: 20%; text-align: center">
+            </td>
+            <td style="width: 20%; text-align: center">
+                {{obj.NguoiNhan}}
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+
+<button #print printSectionId="print-section" [useExistingCss]="true" ngxPrint>print</button>

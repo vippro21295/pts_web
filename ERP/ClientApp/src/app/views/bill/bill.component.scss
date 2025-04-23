@@ -1,0 +1,324 @@
+.bill {
+  margin-top: 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 10px;
+}
+
+
+
+.progress-container {
+  width: 100%;
+  height: 30px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  font-weight: bold;
+  transition: width 0.5s ease-in-out;
+}
+
+.title_table {
+  font-weight: bold;
+  color: rgb(102, 9, 14)
+}
+
+hr {
+  margin: 10px 0 !important;
+  border-top: 1px solid rgba(12, 12, 12, 0.4);
+}
+
+.body-table {
+  width: 100%;
+}
+
+.body-table .table {
+  font-size: 11px;
+  background-color: bisque;
+  text-align: center;
+}
+
+.table>thead>tr>th {
+  padding: 0.25rem
+}
+
+.table>tbody>tr>td {
+  padding: 0.25rem;
+  text-align: left;
+}
+
+.select__input_table {
+  border: none;
+  width: 100%;
+  height: 25px !important;
+}
+
+
+
+
+
+legend.scheduler-border {
+  font-size: 0.9em !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  font-family: 'Times New Roman', Times, serif !important;
+  width: auto;
+  padding: 0 5px;
+  border-bottom: none;
+  margin-bottom: 3px;
+  color: blue;
+}
+
+
+fieldset.scheduler-border {
+  border: 1px groove #ddd !important;
+  padding: 0.5em 0.5em 0.5em 0.5em !important;
+  margin: 0 0 0.5em 0 !important;
+  -webkit-box-shadow: 0px 0px 0px 0px #000;
+  box-shadow: 0px 0px 0px 0px #000;
+  border-radius: 5px;
+}
+
+
+.ag-container {
+  width: 100%;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ag-table-wrapper {
+  max-height: 250px;
+  overflow: auto;
+}
+
+.ag-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.ag-table thead {
+  position: sticky;
+  top: 0;
+  background-color: #f1f1f1;
+  z-index: 10;
+}
+
+.ag-table th {
+  background-color: #ddd;
+  text-align: left;
+  padding: 3px 8px;
+  border-bottom: 2px solid #ccc;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+.ag-table td {
+  padding: 0 8px;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  /* Giới hạn độ rộng của ô */
+}
+
+.table__nhotPTTPTN td {
+  padding: 5px 8px !important;
+}
+
+.ag-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.ag-table tr:hover {
+  background-color: #cce5ff;
+}
+
+.ag-table select {
+  border: 1px solid #ddd;
+}
+
+/* Tooltip */
+.ag-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.ag-tooltip:hover::after {
+  content: attr(data-fulltext);
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: normal;
+  max-width: 250px;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-size: 12px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tr__totalPT {
+
+  font-weight: bold;
+  height: 30px;
+}
+
+.btn__phutungchange {
+  z-index: 10;
+  position: absolute;
+  top: 40%;
+  left: -webkit-calc(50% - 14px);
+}
+
+::ng-deep ng-select .ng-select-container {
+  height: 32px !important;
+  min-height: 32px !important;
+}
+
+
+textarea {
+  font-size: 11px;
+}
+
+select {
+  height: 32px !important;
+}
+
+.input__wage {
+  border: none;
+  padding: 5px 0;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.ng-dropdown-panel {
+  position: fixed !important;
+}
+
+.btn__trash {
+  border: none;
+  background-color: transparent;
+  padding: 0 !important;
+  color: red;
+}
+
+.btn__pencil {
+  border: none;
+  background-color: transparent;
+  padding: 0 !important;
+  color: blue;
+}
+
+.load_dms {
+  position: absolute;
+  z-index: 1;
+  right: 5%;
+  top: -2px;
+  background-color: white;
+}
+
+.ellipsis-cell {
+  min-width: 220px;
+  max-width: 300px;
+  /* Hoặc giá trị phù hợp với giao diện của bạn */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+
+
+.hr_title {
+  width: 35%;
+  margin-top: 0.2rem;
+  margin-bottom: 1.4rem;
+  border: 0;
+  border-top: 3px solid rgba(223, 116, 55, 0.6);
+}
+
+.popup_title {
+  text-align: center;
+  font-weight: 800;
+  color: #4caf50;
+  font-size: 20px;
+}
+
+.input-group-text {
+  background-color: #ff8181;
+}
+
+.input-group-text i {
+  /* CSS áp dụng cho tag <i> nằm trong .input-group-text */
+  color: rgb(252, 252, 252);
+}
+
+.ng-option.ng-option-marked {
+  background-color: #88c2fc !important;
+  color: #bbb9b9
+}
+
+.ellipsis-cell {
+  white-space: nowrap;
+  /* Ngăn xuống dòng */
+  overflow: hidden;
+  /* Ẩn nội dung vượt quá */
+  text-overflow: ellipsis;
+  /* Hiển thị "..." */
+  max-width: 150px;
+  /* Phải trùng với width trong settings */
+}
+
+.ht_clone_top .htCore thead th {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.table__total {
+  border-collapse: separate; /* Phải dùng 'separate' để border-radius hoạt động */
+  border-spacing: 0; /* Loại bỏ khoảng cách giữa các ô */
+  border: 1px solid #ddd; /* Viền cơ bản */
+  border-radius: 8px; /* Bo góc 8px */
+  overflow: hidden; /* Ẩn phần thừa khi bo góc */
+}
+
+.table__total td {
+  background-color: #2c6502;
+  padding: 2px 5px;
+  font-weight: bold;
+  color:white;
+
+}
+
+/* Loại bỏ viền thừa ở góc */
+.table__total tr:first-child td:first-child {
+  border-top-left-radius: 8px;
+}
+.table__total tr:first-child td:last-child {
+  border-top-right-radius: 8px;
+}
+.table__total tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+.table__total tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}

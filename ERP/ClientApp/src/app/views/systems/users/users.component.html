@@ -1,0 +1,170 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> Người dùng
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8"><button class="btn btn-success" data-toggle="modal"
+                            (click)="modalCreateUser.show()"><i class="bi bi-plus-lg"></i>Thêm</button></div>
+                    <div class="col-md-4"> <input type="text" class="form-control" id="inputPassword2"
+                            placeholder="Tìm kiếm"></div>
+                </div>
+                <br />
+                <div class="table-responsive-sm">
+                    <table class="table table-bordered table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>Ảnh đại diện</th>
+                                <th>Tên</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Trạng thái</th>
+                                <th>Ngày tạo</th>
+                                <th>Ngày cập nhật</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of listUser">
+                                <td></td>
+                                <td>{{user.name}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.phoneNumber}}</td>
+                                <td></td>
+                                <td>{{user.createdAt | date:'dd/MM/yyyy HH:mm'}}</td>
+                                <td>{{user.updatedAt | date:'dd/MM/yyyy HH:mm'}}</td>
+                                <td>
+                                    <!-- <a href="#" class="settings" title="" data-toggle="tooltip"
+                                        data-original-title="Settings"><i class="fa fa-pencil"></i></a>&nbsp;
+                                    <a href="#" class="delete" title="" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class="fa fa-trash-o"
+                                            aria-hidden="true"></i></a> -->
+                                    <button class="btn-outline-info mat-focus-indicator">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn-outline-danger mat-focus-indicator"><i
+                                            class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--/.col-->
+</div>
+<div bsModal #modalCreateUser="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="modalCreateUserLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Tạo mới người dùng</h4>
+                <button type="button" class="close" (click)="modalCreateUser.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="avatar-wrapper">
+                            <img class="profile-pic" [src]="imageSrc" />
+                            <div class="upload-button">
+                                <i class="fa fa-arrow-circle-up" aria-hidden="true" (click)="file.click()"></i>
+                            </div>
+                            <input class="file-upload" type="file" accept="image/*" (change)="readURL($event);" #file />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <form>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="icon-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Tên người dùng"
+                                    autocomplete="username" required [(ngModel)]="user.Name"
+                                    [ngModelOptions]="{standalone:true}">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">@</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Email" autocomplete="email"
+                                    [(ngModel)]="user.Email" required [ngModelOptions]="{standalone:true}">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Password"
+                                    autocomplete="new-password" required [(ngModel)]="user.PasswordHash"
+                                    [ngModelOptions]="{standalone:true}">
+                            </div>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="cil-phone"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Số điện thoại"
+                                    autocomplete="new-password" required [(ngModel)]="user.PhoneNumber"
+                                    [ngModelOptions]="{standalone:true}">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group mb-4 col-md-12">
+                        <label for="ccmonth">Chi nhánh</label>
+                        <select class="form-control" id="ccmonth" [(ngModel)]="user.BranchId"
+                            [ngModelOptions]="{standalone:true}">
+                            <option>Chọn</option>
+                            <option value="1">Honda Quận 2</option>
+                            <option value="2">Honda Biên Hòa</option>
+                            <option value="3">Toyota Tiền Giang</option>
+                            <option value="4">Toyota Ninh Kiều</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-4">
+                            <label for="ccmonth">Vai trò</label>
+                            <select class="form-control" id="ccmonth" [(ngModel)]="user.RoleId"
+                                [ngModelOptions]="{standalone:true}">
+                                <option>Chọn</option>
+                                <option *ngFor="let option of roles" [value]="option.id">{{option.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-4">
+                            <label for="ccmonth">Người quản lý</label>
+                            <select class="form-control" id="ccmonth" [(ngModel)]="user.ManagerId"
+                                [ngModelOptions]="{standalone:true}">
+                                <option>Chọn</option>
+                                <option *ngFor="let option of listUser" [value]="option.id">{{option.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="modalCreateUser.hide()">Close</button>
+                <button type="button" class="btn btn-primary" (click)="CreateUser()">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
