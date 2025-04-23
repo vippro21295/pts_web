@@ -1,3 +1,7 @@
 /packages
 /ERP/ClientApp/node_modules
+/ERP/ClientApp/package-lock.json
 /ERP/ClientApp/dist
+/ERP/ClientApp/dist-server
+/ERP/ClientApp/tmp
+/ERP/ClientApp/out-tsc
